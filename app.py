@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, flash
 
+
 app = Flask(__name__)
 app.secret_key = "beingraigari_0321"
 
@@ -7,6 +8,7 @@ app.secret_key = "beingraigari_0321"
 def index():
 	flash("Please enter your first and last name.")
 	return render_template("index.html")
+
 
 @app.route("/greet", methods=['POST', 'GET'])
 def greeter():
