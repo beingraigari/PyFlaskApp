@@ -34,11 +34,11 @@ if [ ! -f /etc/nginx/sites-available/myapp ]; then
     sudo bash -c 'cat > /etc/nginx/sites-available/myapp <<EOF
 server {
     listen 80;
-    server_name _;
+    server_name bharathraigari.signiance.com;
 
     location / {
         include proxy_params;
-        proxy_pass http://unix:/var/www/py-flask-app/myapp.sock;
+        proxy_pass http://13.232.192.253/;
     }
 }
 EOF'
