@@ -49,6 +49,17 @@ else
     echo "Nginx reverse proxy configuration already exists."
 fi
 
+# Let's encrypt SSL certificate installation
+
+#sudo apt-get update
+#sudo apt-get install certbot
+#sudo apt-get install python3-certbot-nginx
+
+#sudo nginx -t && nginx -s reload
+
+#sudo certbot --nginx -d bharathraigari.signiance.com -d www.bharathraigari.signiance.com
+
+
 # Stop any existing Gunicorn process
 sudo pkill gunicorn
 sudo rm -rf myapp.sock
