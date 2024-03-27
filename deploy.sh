@@ -38,7 +38,7 @@ server {
 
     location / {
         include proxy_params;
-        proxy_pass http://13.232.192.253;
+        proxy_pass http://65.1.42.164;
     }
 }
 EOF'
