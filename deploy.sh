@@ -28,7 +28,8 @@ if ! command -v nginx > /dev/null; then
     sudo apt-get install -y nginx
 fi
 
-# Configure Nginx to act as a reverse proxy if not already configured
+# Configure Nginx to act as a reverse proxy if not already configured  AND pass the elastic IP address instead of public to avoid ip change on restart
+
 if [ ! -f /etc/nginx/sites-available/myapp ]; then
     sudo rm -f /etc/nginx/sites-enabled/default
     sudo bash -c 'cat > /etc/nginx/sites-available/myapp <<EOF
@@ -38,7 +39,7 @@ server {
 
     location / {
         include proxy_params;
-        proxy_pass http://65.1.42.164;
+        proxy_pass http://65.1.42.164;                                   
     }
 }
 EOF'
