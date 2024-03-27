@@ -50,7 +50,7 @@ else
     echo "Nginx reverse proxy configuration already exists."
 fi
 
-# Let's encrypt SSL certificate installation
+# Let's encrypt SSL certificate installation for the domain name
 
 #sudo apt-get update
 #sudo apt-get install certbot
