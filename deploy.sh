@@ -7,8 +7,7 @@ echo "creating app folder"
 sudo mkdir -p /var/www/py-flask-app 
 
 echo "moving files to app folder"
-sudo mv  * /var/www/py-flask-app
-sudo mv docker-compose.yml /var/www/py-flask-app
+sudo mv * /var/www/py-flask-app
 
 # Navigate to the app directory
 cd /var/www/py-flask-app/
