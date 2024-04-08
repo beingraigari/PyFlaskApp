@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, flash
+import socket
 
 
 app = Flask(__name__)
@@ -6,6 +7,8 @@ app.secret_key = "beingraigari_0321"
 
 @app.route("/")
 def index():
+	host_name = socket.gethostname()
+	flash("Container ID is " + socket.gethostname())
 	flash("Enter Your First Last Name")
 	return render_template("index.html")
 

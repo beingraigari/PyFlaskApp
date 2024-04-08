@@ -10,7 +10,7 @@
     <br>
     <form action="greet" method="post">
         {% for message in get_flashed_messages() %}
-             <p>{{ message }}</p>
+             <li>{{ message }}</li>
          {% endfor %}
         <br>
         <input type="text" name="firstname_input">

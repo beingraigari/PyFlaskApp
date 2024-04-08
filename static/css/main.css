@@ -2,11 +2,11 @@ body {
     text-align: center;
     background-color: SlateGrey;
 }
-p {
+li {
     color: white;
     font-family: Shanti;
     font-size: 1.2em;
-    display: inline-block;
+    display: block;
     margin:  20px;
 }
 img {
