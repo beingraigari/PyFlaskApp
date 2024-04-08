@@ -74,8 +74,8 @@ sudo pip install -r requirements.txt
 
 
 # Stop any existing Gunicorn process
-sudo pkill gunicorn
-sudo rm -rf myapp.sock
+# sudo pkill gunicorn
+# sudo rm -rf myapp.sock
 
 # # Start Gunicorn with the Flask application
 
