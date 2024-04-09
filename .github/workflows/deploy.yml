@@ -120,6 +120,7 @@ jobs:
             EC2_USERNAME: ${{ secrets.EC2_USERNAME }}
           run: |
             ssh -o StrictHostKeyChecking=no $EC2_USERNAME@$EC2_HOST "chmod +x ./deployprom.sh && ./deployprom.sh"
+            
     
         - name: Clean up SSH key 
           if: always()
@@ -158,7 +159,7 @@ jobs:
             EC2_HOST: ${{ secrets.EC2_HOST }}
             EC2_USERNAME: ${{ secrets.EC2_USERNAME }}
           run: |
-            ssh -o StrictHostKeyChecking=no $EC2_USERNAME@$EC2_HOST "chmod +x ./deployprom.sh && ./deployprom.sh"
+            ssh -o StrictHostKeyChecking=no $EC2_USERNAME@$EC2_HOST "chmod +x ./deploynodexporter.sh && ./deploynodexporter.sh"
     
         - name: Clean up SSH key 
           if: always()
