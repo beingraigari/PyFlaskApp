@@ -141,7 +141,7 @@ resource "aws_security_group" "promgroup" {
       from_port        = 9090
       ipv6_cidr_blocks = []
       prefix_list_ids  = []
-      protocol         = "promserver"
+      protocol         = "tcp"
       security_groups  = []
       self             = false
       to_port          = 9090
@@ -152,7 +152,7 @@ resource "aws_security_group" "promgroup" {
       from_port        = 9100
       ipv6_cidr_blocks = []
       prefix_list_ids  = []
-      protocol         = "promnodeexporter"
+      protocol         = "tcp"
       security_groups  = []
       self             = false
       to_port          = 9100
@@ -163,7 +163,7 @@ resource "aws_security_group" "promgroup" {
       from_port        = 3000
       ipv6_cidr_blocks = []
       prefix_list_ids  = []
-      protocol         = "grafana"
+      protocol         = "tcp"
       security_groups  = []
       self             = false
       to_port          = 3000
