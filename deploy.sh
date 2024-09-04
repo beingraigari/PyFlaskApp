@@ -73,7 +73,7 @@ sudo pip install -r requirements.txt
 #sudo certbot --nginx -d bharathraigari.signiance.com -d www.bharathraigari.signiance.com
 
 
-# Stop any existing Gunicorn process
+# Stop any existing Gunicorn processes
 # sudo pkill gunicorn
 # sudo rm -rf myapp.sock
 
