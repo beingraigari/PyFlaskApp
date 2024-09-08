@@ -9,7 +9,7 @@ app.secret_key = "beingraigari_0321"
 def index():
 	host_name = socket.gethostname()
 	flash("Container ID is " + socket.gethostname())
-	flash("Please Enter Your First Last Name")
+	flash("Please Enter Your First and Last Name")
 	return render_template("index.html")
 
 
