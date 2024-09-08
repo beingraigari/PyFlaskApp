@@ -59,7 +59,7 @@ sudo pip install -r requirements.txt
 #     sudo ln -s /etc/nginx/sites-available/myapp /etc/nginx/sites-enabled
 #     sudo systemctl restart nginx
 # else
-#     echo "Nginx reverse proxy configuration already exists."
+#     echo "Nginx reverse proxy configuration already exists!"
 # fi
 
 # Let's encrypt SSL certificate installation for the domain name
