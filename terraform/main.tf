@@ -16,7 +16,7 @@ provider "aws" {
 
 }
 
-resource "aws_instance" "ubuntuserver" {
+resource "aws_instance" "ubuntu_server" {
   ami                    = "ami-007020fd9c84e18c7"
   instance_type          = "t2.micro"
   key_name               = aws_key_pair.deployer.key_name
