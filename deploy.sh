@@ -27,6 +27,9 @@ sudo chmod +x /usr/local/bin/docker-compose
 
 sudo kill -9 `sudo lsof -t -i:80` 
 
+sudo systemctl status httpd
+
+
 
 # Install application dependencies from requirements.txt
 echo "Install application dependencies from requirements.txt"
