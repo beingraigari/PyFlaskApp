@@ -17,3 +17,4 @@ def index():
 def greeter():
 	flash("Hello " + str(request.form['firstname_input']) + " " + str(request.form['secondname_input']))
 	return render_template("index.html")
+
