@@ -58,7 +58,7 @@ jobs:
         - name: Setup SSH Key
           run: |
             sudo mkdir -p ~/.ssh
-            echo "${{ secrets.AWS_SSH_KEY_PRIVATE }}" > ~/.ssh/id_rsa
+            sudo echo "${{ secrets.AWS_SSH_KEY_PRIVATE }}" > ~/.ssh/id_rsa
             chmod 644 ~/.ssh/id_rsa
             ssh-keyscan ${{ secrets.EC2_HOST }} >> ~/.ssh/known_hosts
         - name: Create .env file dynamically 
