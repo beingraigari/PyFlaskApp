@@ -57,10 +57,10 @@ jobs:
 
         - name: Setup SSH Key
           run: |
-            mkdir -p home/runner/.ssh
-            echo "${{ secrets.AWS_SSH_KEY_PRIVATE }}" > home/runner/.ssh/id_rsa
-            chmod 600 home/runner/.ssh/id_rsa
-            ssh-keyscan ${{ secrets.EC2_HOST }} >> home/runner/.ssh/id_rsa
+            mkdir -p ~/.ssh/id_rsa
+            echo "${{ secrets.AWS_SSH_KEY_PRIVATE }}" > ~/.ssh/id_rsa
+            chmod 600 ~/.ssh/id_rsa
+            ssh-keyscan ${{ secrets.EC2_HOST }} > ~/.ssh/id_rsa
         - name: Create .env file dynamically 
           env:
             EC2_USERNAME: ${{ secrets.EC2_USERNAME }}
