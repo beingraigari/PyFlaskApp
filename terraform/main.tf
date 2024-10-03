@@ -16,7 +16,7 @@ provider "aws" {
 
 }
 
-resource "aws_instance" "ubuntuBox" {
+resource "aws_instance" "ubuntuserver" {
   ami                    = "ami-007020fd9c84e18c7"
   instance_type          = "t2.micro"
   key_name               = aws_key_pair.deployer.key_name
@@ -30,11 +30,11 @@ resource "aws_instance" "ubuntuBox" {
     timeout     = "5m"
   }
   tags = {
-    Name = "ubuntuVM"
+    "name" = "DeployVM"
   }
 }
 
-resource "aws_instance" "promBox" {
+resource "aws_instance" "promserver" {
   ami                    = "ami-007020fd9c84e18c7"
   instance_type          = "t2.micro"
   key_name               = aws_key_pair.deployer.key_name
@@ -213,7 +213,7 @@ resource "aws_key_pair" "deployer" {
 
 
 output "instance_public_ip" {
-  value     = aws_instance.ubuntuBox.public_ip
+  value     = aws_instance.ubuntuserver.public_ip
   sensitive = true
 
 }

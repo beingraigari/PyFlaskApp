@@ -35,7 +35,7 @@ jobs:
                 -var="region=ap-south-1" \
                 -var="public_key=$PUBLIC_SSH_KEY" \
                 -var="private_key=$PRIVATE_SSH_KEY" \
-                -var="key_name=deployerkey" \
+                -var="key_name=deployer-key" \
                 -out=PLAN
               working-directory: ./terraform
             - name: Terraform Apply
@@ -45,7 +45,7 @@ jobs:
             - name: set output
               id: set-ip
               run: |-
-                echo "instance_public_ip=$(terraform output instance_public_ip)" >> $GITHUB_OUTPUT
+                echo "::set-output name=instance_public_ip::$(terraform output instance_public_ip)"
 
     deploy-app:
       runs-on: ubuntu-latest
@@ -75,7 +75,7 @@ jobs:
             scp -r * $EC2_USERNAME@$EC2_HOST:/home/ubuntu/
             
     
-        - name: Run Bash Script To Deploy App
+        - name: Run Bash Script To Delpoy App
           env:
             EC2_HOST: ${{ secrets.EC2_HOST }}
             EC2_USERNAME: ${{ secrets.EC2_USERNAME }}
@@ -165,5 +165,3 @@ jobs:
         - name: Clean up SSH key 
           if: always()
           run: rm -f ~/.ssh/id_rsa
-
-          
