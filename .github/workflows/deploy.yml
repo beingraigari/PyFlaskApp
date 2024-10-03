@@ -75,7 +75,7 @@ jobs:
             scp -r * $EC2_USERNAME@$EC2_HOST:/home/ubuntu/
             
     
-        - name: Run Bash Script To Delpoy App
+        - name: Run Bash Script To Deploy App
           env:
             EC2_HOST: ${{ secrets.EC2_HOST }}
             EC2_USERNAME: ${{ secrets.EC2_USERNAME }}

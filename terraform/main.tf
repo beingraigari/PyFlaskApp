@@ -16,7 +16,7 @@ provider "aws" {
 
 }
 
-resource "aws_instance" "ubuntu_server" {
+resource "aws_instance" "ubuntuBox" {
   ami                    = "ami-007020fd9c84e18c7"
   instance_type          = "t2.micro"
   key_name               = aws_key_pair.deployer.key_name
@@ -34,7 +34,7 @@ resource "aws_instance" "ubuntu_server" {
   }
 }
 
-resource "aws_instance" "promserver" {
+resource "aws_instance" "promBox" {
   ami                    = "ami-007020fd9c84e18c7"
   instance_type          = "t2.micro"
   key_name               = aws_key_pair.deployer.key_name
