@@ -56,15 +56,11 @@ jobs:
 
 
         - name: Setup SSH Key
-          env:
-                  SSH_AUTH_SOCK: /tmp/ssh_agent.sock
           run: |
             mkdir -p home/runner/.ssh
-            echo "${{ secrets.AWS_SSH_KEY_PRIVATE }}" > home/runner/.ssh/github_actions
-            chmod 600 home/runner/.ssh/github_actions
-            ssh-keyscan ${{ secrets.EC2_HOST }} >> home/runner/.ssh/github_actions
-            ssh-agent -a $SSH_AUTH_SOCK > /dev/null
-            ssh-add /home/runner/.ssh/github_actions
+            echo "${{ secrets.AWS_SSH_KEY_PRIVATE }}" > home/runner/.ssh/id_rsa
+            chmod 600 home/runner/.ssh/id_rsa
+            ssh-keyscan ${{ secrets.EC2_HOST }} >> home/runner/.ssh/id_rsa
         - name: Create .env file dynamically 
           env:
             EC2_USERNAME: ${{ secrets.EC2_USERNAME }}
