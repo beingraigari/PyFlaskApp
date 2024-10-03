@@ -30,7 +30,7 @@ resource "aws_instance" "ubuntuBox" {
     timeout     = "5m"
   }
   tags = {
-    "name" = "DeployVM"
+    Name = "ubuntuVM"
   }
 }
 
