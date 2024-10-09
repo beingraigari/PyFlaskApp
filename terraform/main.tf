@@ -34,6 +34,11 @@ resource "aws_instance" "ubuntuserver" {
   }
 }
 
+resource "aws_eip" "ubuntu_eip" {
+  vpc = true
+  instance = aws_instance.ubuntuserver.id
+}
+
 resource "aws_instance" "promserver" {
   ami                    = "ami-007020fd9c84e18c7"
   instance_type          = "t2.micro"
@@ -50,6 +55,11 @@ resource "aws_instance" "promserver" {
   tags = {
     "name" = "DeployVM"
   }
+}
+
+resource "aws_eip" "promserver_eip" {
+  vpc = true
+  instance = aws_instance.promserver.id
 }
 
 resource "aws_iam_instance_profile" "ec2-profile" {
