@@ -2,12 +2,12 @@ name: AWS Infra with Terraform
 on:
     push:
         branches:
-            - "deploytoaws"                                             # When code is deployed to the specific branch
+            - "deploytoaws"                                             # The code is deployed to the specific branch
 
 env:
     AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
     AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-    TF_STATE_BUCKET_NAME: ${{ secrets.AWS_TF_STATE_BUCKET_NAME }}
+    TF_STATE_BUCKET_NAME: ${{ secrets.AWS_TF_STATE_BUCKET_NAME }}          # We define all the env variables that we added to GitHUb secrets
     PRIVATE_SSH_KEY: ${{ secrets.AWS_SSH_KEY_PRIVATE }}
     PUBLIC_SSH_KEY: ${{ secrets.AWS_SSH_KEY_PUBLIC }}
     AWS_REGION: ap-south-1
