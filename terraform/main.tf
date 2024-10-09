@@ -39,7 +39,7 @@ resource "aws_eip" "ubuntu_eip" {
   instance = aws_instance.ubuntuserver.id
 }
 
-resource "aws_instance" "promserver" {
+resource "aws_instance" "prometheusserver" {
   ami                    = "ami-007020fd9c84e18c7"
   instance_type          = "t2.micro"
   key_name               = aws_key_pair.deployer.key_name
@@ -59,7 +59,7 @@ resource "aws_instance" "promserver" {
 
 resource "aws_eip" "promserver_eip" {
   vpc = true
-  instance = aws_instance.promserver.id
+  instance = aws_instance.prometheusserver.id
 }
 
 resource "aws_iam_instance_profile" "ec2-profile" {
