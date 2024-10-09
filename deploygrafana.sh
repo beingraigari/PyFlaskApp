@@ -1,4 +1,6 @@
-sudo apt-get install -y adduser libfontconfig1 musl
+sudo apt-get update
+
+sudo apt-get install -y libfontconfig1 musl
 
 wget https://dl.grafana.com/oss/release/grafana_10.4.1_amd64.deb
 
